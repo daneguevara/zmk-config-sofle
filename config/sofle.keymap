@@ -25,7 +25,7 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <1 2>;
+            if-layers = <2 2>;
             then-layer = <3>;
         };
     };
@@ -48,6 +48,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        shift_plus: shift_plus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_PLUS";
+            bindings = <&kp MINUS>, <&kp PLUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -64,11 +73,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB           &kp N1  &kp N2             &kp N3        &kp N4                &kp N5                                                  &kp N6        &kp N7           &kp N8            &kp N9             &kp N0    &kp PLUS
-&kp GRAVE         &kp Q   &kp W              &kp E         &kp R                 &kp T                                                   &kp Y         &kp U            &kp I             &kp O              &kp P     &kp MINUS
-&mt LCTRL ESCAPE  &kp A   &kp S              &kp D         &kp F                 &kp G                                                   &kp H         &kp J            &kp K             &kp L              &kp SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z   &kp X              &kp C         &kp V                 &kp B               &rgb_ug RGB_TOG    &kp CAPSLOCK     &kp N         &kp M            &kp COMMA         &kp DOT            &kp FSLH  &kp BACKSLASH
-                          &kp LG(LA(LCTRL))  &kp LEFT_ALT  &mt LEFT_SHIFT SPACE  &mt LEFT_GUI ENTER  &lt 1 TAB          &lt 2 BACKSPACE  &shift_space  &kp RIGHT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp TAB           &kp N1  &kp N2             &kp N3            &kp N4              &kp N5                                                  &kp N6        &kp N7           &kp N8            &kp N9             &kp N0    &kp EQUAL
+&kp GRAVE         &kp Q   &kp W              &kp E             &kp R               &kp T                                                   &kp Y         &kp U            &kp I             &kp O              &kp P     &kp MINUS
+&mt LCTRL ESCAPE  &kp A   &kp S              &kp D             &kp F               &kp G                                                   &kp H         &kp J            &kp K             &kp L              &kp SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z   &kp X              &kp C             &kp V               &kp B               &rgb_ug RGB_TOG    &kp CAPSLOCK     &kp N         &kp M            &kp COMMA         &kp DOT            &kp FSLH  &mt RIGHT_SHIFT BACKSLASH
+                          &kp LG(LA(LCTRL))  &kp LEFT_CONTROL  &mt LEFT_ALT SPACE  &mt LEFT_GUI ENTER  &lt 2 TAB          &lt 2 BACKSPACE  &shift_space  &kp RIGHT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings =
@@ -88,7 +97,7 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp LS(TAB)  &kp F1           &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6        &kp F7         &kp F8            &kp F9                &kp F10                &kp PLUS
+&kp LS(TAB)  &kp F1           &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6        &kp F7         &kp F8            &kp F9                &kp F10                &kp QUESTION
 &kp TILDE    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT                     &kp CARET     &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
 &trans       &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8      &kp NUMBER_9          &shift_0               &trans
 &trans       &kp F11          &kp F12       &trans        &trans        &trans        &trans    &trans  &trans        &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &trans                 &trans
