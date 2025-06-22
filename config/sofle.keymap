@@ -122,7 +122,7 @@
 &kp LG(GRAVE)  &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)      &kp LG(NUMBER_4)      &kp LG(NUMBER_5)                        &kp LG(NUMBER_6)  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &kp LG(NUMBER_0)  &kp BACKSPACE
 &trans         &kp HOME          &kp END           &kp PAGE_UP           &kp PAGE_DOWN         &kp PRINTSCREEN                         &kp LEFT          &kp DOWN          &kp UP_ARROW      &kp RIGHT         &kp INS           &kp DEL
 &trans         &trans            &trans            &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LS(LG(NUMBER_5))  &trans    &trans  &trans            &trans            &trans            &trans            &trans            &kp ENTER
-                                 &trans            &trans                &kp SPACE             &kp ENTER             &trans    &trans  &trans            &trans            &trans            &trans
+                                 &trans            &trans                &trans                &trans                &trans    &trans  &trans            &trans            &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
