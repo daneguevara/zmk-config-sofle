@@ -98,11 +98,11 @@
 
         control_layer {
             bindings = <
-&trans                   &trans  &trans  &trans  &trans  &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans                   &trans  &trans  &trans  &trans  &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
-&mt LEFT_COMMAND ESCAPE  &trans  &trans  &trans  &trans  &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans                   &trans  &trans  &trans  &trans  &trans                  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                 &trans  &trans  &trans  &mt LEFT_CONTROL ENTER  &trans    &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans  &trans  &trans                &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans  &trans  &trans                &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans  &trans  &trans                &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_ALT  &trans  &trans  &trans  &trans                &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans  &trans  &mt LEFT_SHIFT SPACE  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "control";
