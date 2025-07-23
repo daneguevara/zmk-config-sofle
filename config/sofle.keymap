@@ -29,15 +29,6 @@
     };
 
     behaviors {
-        shift_space: shift_space {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_SPACE";
-            bindings = <&kp SPACE>, <&kp UNDER>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         shift_0: shift_0 {
             compatible = "zmk,behavior-mod-morph";
             label = "SHIFT_0";
@@ -47,19 +38,11 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        shift_plus: shift_plus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_PLUS";
-            bindings = <&kp MINUS>, <&kp PLUS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         layer_on: layer_on {
             compatible = "zmk,behavior-toggle-layer";
             label = "LAYER_ON";
             #binding-cells = <1>;
+            toggle-mode = "on";
         };
 
         layer_off: layer_off {
@@ -98,11 +81,11 @@
 
         control_layer {
             bindings = <
-&trans        &trans  &trans  &trans  &trans                &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans  &trans  &trans  &trans                &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans  &trans  &trans  &trans                &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_ALT  &trans  &trans  &trans  &trans                &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &trans  &mt LEFT_SHIFT SPACE  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                &trans                    &trans  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                &trans                    &trans  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                &trans                    &trans  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                &trans  &trans    &trans  &trans  &trans         &trans  &trans  &trans  &trans
+                &trans  &trans  &mt LEFT_SHIFT SPACE  &trans  &trans    &trans  &trans  &kp RIGHT_ALT  &trans  &trans
             >;
 
             label = "control";
@@ -123,7 +106,7 @@
 &kp LS(TAB)  &kp F1           &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6        &kp F7         &kp F8        &kp F9                &kp F10                &trans
 &kp TILDE    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT                     &kp CARET     &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
 &trans       &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8  &kp NUMBER_9          &shift_0               &trans
-&trans       &kp F11          &kp F12       &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans        &trans                &kp LEFT_BRACKET       &kp RIGHT_BRACKET
+&trans       &kp F11          &kp F12       &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans        &trans                &kp LEFT_BRACKET       &mt RIGHT_SHIFT RIGHT_BRACKET
                               &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans        &trans
             >;
 
@@ -141,10 +124,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp LG(TAB)    &trans            &trans            &trans                &trans                &trans                                  &trans            &trans            &trans            &trans            &trans            &trans
-&kp LG(GRAVE)  &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)      &kp LG(NUMBER_4)      &kp LG(NUMBER_5)                        &kp LG(NUMBER_6)  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &kp LG(NUMBER_0)  &kp BACKSPACE
-&trans         &kp HOME          &kp END           &kp PAGE_UP           &kp PAGE_DOWN         &kp PRINTSCREEN                         &kp LEFT          &kp DOWN          &kp UP_ARROW      &kp RIGHT         &kp INS           &kp DEL
-&trans         &trans            &trans            &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LS(LG(NUMBER_5))  &trans    &trans  &trans            &trans            &trans            &trans            &trans            &kp ENTER
+&kp LG(TAB)    &trans            &trans            &trans                &trans                &trans                                  &trans            &trans            &trans            &trans            &trans               &trans
+&kp LG(GRAVE)  &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)      &kp LG(NUMBER_4)      &kp LG(NUMBER_5)                        &kp LG(NUMBER_6)  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &kp LG(PRINTSCREEN)  &kp BACKSPACE
+&trans         &kp HOME          &kp PAGE_UP       &kp PAGE_DOWN         &kp END               &kp SCROLLLOCK                          &kp LEFT          &kp DOWN          &kp UP_ARROW      &kp RIGHT         &kp INS              &kp DEL
+&trans         &trans            &trans            &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LS(LG(NUMBER_5))  &trans    &trans  &trans            &trans            &trans            &trans            &trans               &trans
                                  &trans            &trans                &trans                &trans                &trans    &trans  &trans            &trans            &trans            &trans
             >;
 
