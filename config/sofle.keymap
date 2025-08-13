@@ -51,6 +51,42 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+
+        h_bracket: h_bracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "H_BRACKET";
+            bindings = <&kp NUMBER_6>, <&kp LEFT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        j_brace: j_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "J_BRACE";
+            bindings = <&kp N7>, <&kp LEFT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        k_brace: k_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "K_BRACE";
+            bindings = <&kp N8>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        l_bracket: l_bracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "L_BRACKET";
+            bindings = <&kp N9>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -67,11 +103,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB           &kp N1  &kp N2             &kp N3            &kp N4              &kp N5                                               &kp N6     &kp N7           &kp N8            &kp N9             &kp N0    &kp EQUAL
-&kp GRAVE         &kp Q   &kp W              &kp E             &kp R               &kp T                                                &kp Y      &kp U            &kp I             &kp O              &kp P     &kp MINUS
-&mt LCTRL ESCAPE  &kp A   &kp S              &kp D             &kp F               &kp G                                                &kp H      &kp J            &kp K             &kp L              &kp SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z   &kp X              &kp C             &kp V               &kp B               &layer_off 1    &layer_on 1      &kp N      &kp M            &kp COMMA         &kp DOT            &kp FSLH  &mt RIGHT_SHIFT BACKSLASH
-                          &kp LG(LA(LCTRL))  &kp LEFT_CONTROL  &mt LEFT_ALT SPACE  &mt LEFT_GUI ENTER  &lt 2 TAB       &lt 3 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp TAB           &kp N1  &kp N2             &kp N3            &kp N4        &kp N5                                            &kp N6     &kp N7           &kp N8            &kp N9             &kp N0    &kp EQUAL
+&kp GRAVE         &kp Q   &kp W              &kp E             &kp R         &kp T                                             &kp Y      &kp U            &kp I             &kp O              &kp P     &kp MINUS
+&mt LCTRL ESCAPE  &kp A   &kp S              &kp D             &kp F         &kp G                                             &kp H      &kp J            &kp K             &kp L              &kp SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z   &kp X              &kp C             &kp V         &kp B               &none        &none            &kp N      &kp M            &kp COMMA         &kp DOT            &kp FSLH  &kp BACKSLASH
+                          &kp LG(LA(LCTRL))  &kp LEFT_CONTROL  &kp LEFT_ALT  &mt LEFT_GUI ENTER  &lt 2 TAB    &lt 3 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings =
@@ -81,11 +117,11 @@
 
         control_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                &trans                    &trans  &trans         &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                &trans                    &trans  &trans         &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                &trans                    &trans  &trans         &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                &trans  &trans    &trans  &trans  &trans         &trans  &trans  &trans  &trans
-                &trans  &trans  &mt LEFT_SHIFT SPACE  &trans  &trans    &trans  &trans  &kp RIGHT_ALT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans    &trans  &trans  &trans         &trans  &trans  &trans  &trans
+                &trans  &trans  &kp LEFT_SHIFT  &trans  &trans    &trans  &trans  &kp RIGHT_ALT  &trans  &trans
             >;
 
             label = "control";
@@ -103,11 +139,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp LS(TAB)  &kp F1           &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6        &kp F7         &kp F8        &kp F9                &kp F10                &trans
-&kp TILDE    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT                     &kp CARET     &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
-&trans       &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8  &kp NUMBER_9          &shift_0               &trans
-&trans       &kp F11          &kp F12       &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans        &trans                &kp LEFT_BRACKET       &mt RIGHT_SHIFT RIGHT_BRACKET
-                              &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans         &trans        &trans
+&kp F11    &kp F1           &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6      &kp F7         &kp F8        &kp F9                &kp F10                &kp F12
+&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT                     &kp CARET   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
+&trans     &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &h_bracket  &j_brace       &k_brace      &l_bracket            &shift_0               &trans
+&trans     &trans           &trans        &trans        &trans        &trans        &trans    &trans  &trans      &trans         &trans        &trans                &trans                 &trans
+                            &trans        &trans        &trans        &trans        &trans    &trans  &trans      &trans         &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -124,10 +160,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp LG(TAB)    &trans            &trans            &trans                &trans                &trans                                  &trans            &trans            &trans            &trans            &trans               &trans
-&kp LG(GRAVE)  &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)      &kp LG(NUMBER_4)      &kp LG(NUMBER_5)                        &kp LG(NUMBER_6)  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &kp LG(PRINTSCREEN)  &kp BACKSPACE
-&trans         &kp HOME          &kp PAGE_UP       &kp PAGE_DOWN         &kp END               &kp SCROLLLOCK                          &kp LEFT          &kp DOWN          &kp UP_ARROW      &kp RIGHT         &kp INS              &kp DEL
-&trans         &trans            &trans            &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LS(LG(NUMBER_5))  &trans    &trans  &trans            &trans            &trans            &trans            &trans               &trans
+&kp LG(TAB)    &trans            &trans            &trans                &trans                &trans                                  &trans            &trans            &trans            &trans            &trans      &trans
+&kp LG(GRAVE)  &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)      &kp LG(NUMBER_4)      &kp LG(NUMBER_5)                        &kp LG(NUMBER_6)  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &kp LG(N0)  &trans
+&trans         &kp HOME          &kp PAGE_UP       &kp PAGE_DOWN         &kp END               &kp SCROLLLOCK                          &kp LEFT          &kp DOWN          &kp UP_ARROW      &kp RIGHT         &trans      &trans
+&trans         &trans            &trans            &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LS(LG(NUMBER_5))  &trans    &trans  &trans            &trans            &trans            &trans            &trans      &trans
                                  &trans            &trans                &trans                &trans                &trans    &trans  &trans            &trans            &trans            &trans
             >;
 
@@ -144,10 +180,10 @@
 
             display-name = "adjust";
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none           &none           &none         &none            &none  &bt BT_CLR
-&none  &none         &none         &none         &none         &none                           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none  &none
-&none  &mkp MB4      &mkp MB4      &mkp MB3      &mkp MB1      &mkp MB2                        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none  &none
-&none  &none         &none         &none         &none         &none         &trans    &trans  &none           &none           &none         &none            &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none           &none           &none         &none            &none     &bt BT_CLR
+&none  &none         &none         &none         &none         &none                           &mkp MB4        &mkp LCLK       &mkp MCLK     &mkp RCLK        &mkp MB5  &none
+&none  &kp F11       &kp F12       &none         &none         &none                           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none     &none
+&none  &none         &none         &none         &none         &none         &trans    &trans  &none           &none           &none         &none            &none     &none
                      &none         &none         &none         &none         &trans    &trans  &none           &none           &none         &none
             >;
         };
