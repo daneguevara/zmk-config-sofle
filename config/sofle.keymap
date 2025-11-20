@@ -87,6 +87,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        w_alt_bs: w_alt_bs {
+            compatible = "zmk,behavior-mod-morph";
+            label = "W_ALT_BS";
+            bindings = <&kp W>, <&kp LA(BACKSPACE)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        u_gui_bs: u_gui_bs {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_GUI_BS";
+            bindings = <&kp U>, <&kp LG(BACKSPACE)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
     };
 
     keymap {
@@ -104,7 +122,7 @@
 
             bindings = <
 &kp TAB                &kp N1  &kp N2             &kp N3            &kp N4        &kp N5                                            &kp N6     &kp N7           &kp N8            &kp N9             &kp N0    &kp EQUAL
-&kp GRAVE              &kp Q   &kp W              &kp E             &kp R         &kp T                                             &kp Y      &kp U            &kp I             &kp O              &kp P     &kp MINUS
+&kp GRAVE              &kp Q   &w_alt_bs          &kp E             &kp R         &kp T                                             &kp Y      &u_gui_bs        &kp I             &kp O              &kp P     &kp MINUS
 &mt LEFT_SHIFT ESCAPE  &kp A   &kp S              &kp D             &kp F         &kp G                                             &kp H      &kp J            &kp K             &kp L              &kp SEMI  &kp SQT
 &kp LEFT_CONTROL       &kp Z   &kp X              &kp C             &kp V         &kp B               &none        &none            &kp N      &kp M            &kp COMMA         &kp DOT            &kp FSLH  &kp BACKSLASH
                                &kp LG(LA(LCTRL))  &kp LEFT_CONTROL  &kp LEFT_ALT  &mt LEFT_GUI ENTER  &lt 2 TAB    &lt 3 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
@@ -115,16 +133,16 @@
                 <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
-        control_layer {
+        super_shift {
             bindings = <
-&trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans         &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans         &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans         &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans    &trans  &trans  &trans         &trans  &trans  &trans  &trans
-                &trans  &trans  &kp LEFT_SHIFT  &trans  &trans    &trans  &trans  &kp RIGHT_ALT  &trans  &trans
+&trans        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_GUI  &trans  &trans  &trans  &trans  &trans            &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans  &trans  &trans  &kp LEFT_CONTROL  &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "control";
+            label = "super_shift";
         };
 
         lower_layer {
