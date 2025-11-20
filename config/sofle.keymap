@@ -121,11 +121,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB                &kp N1  &kp N2             &kp N3            &kp N4        &kp N5                                            &kp N6     &kp N7           &kp N8            &kp N9             &kp N0    &kp EQUAL
-&kp GRAVE              &kp Q   &w_alt_bs          &kp E             &kp R         &kp T                                             &kp Y      &u_gui_bs        &kp I             &kp O              &kp P     &kp MINUS
-&mt LEFT_SHIFT ESCAPE  &kp A   &kp S              &kp D             &kp F         &kp G                                             &kp H      &kp J            &kp K             &kp L              &kp SEMI  &kp SQT
-&kp LEFT_CONTROL       &kp Z   &kp X              &kp C             &kp V         &kp B               &none        &none            &kp N      &kp M            &kp COMMA         &kp DOT            &kp FSLH  &kp BACKSLASH
-                               &kp LG(LA(LCTRL))  &kp LEFT_CONTROL  &kp LEFT_ALT  &mt LEFT_GUI ENTER  &lt 2 TAB    &lt 3 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp TAB                &kp N1  &kp N2             &kp N3            &kp N4        &kp N5                                            &kp N6     &kp N7     &kp N8            &kp N9             &kp N0    &kp EQUAL
+&kp GRAVE              &kp Q   &w_alt_bs          &kp E             &kp R         &kp T                                             &kp Y      &u_gui_bs  &kp I             &kp O              &kp P     &kp MINUS
+&mt LEFT_SHIFT ESCAPE  &kp A   &kp S              &kp D             &kp F         &kp G                                             &kp H      &kp J      &kp K             &kp L              &kp SEMI  &kp SQT
+&kp LEFT_CONTROL       &kp Z   &kp X              &kp C             &kp V         &kp B               &none        &none            &kp N      &kp M      &kp COMMA         &kp DOT            &kp FSLH  &kp BACKSLASH
+                               &kp LG(LA(LCTRL))  &kp LEFT_CONTROL  &kp LEFT_ALT  &mt LEFT_GUI ENTER  &lt 2 TAB    &lt 3 BACKSPACE  &kp SPACE  &mo 1      &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings =
@@ -135,11 +135,11 @@
 
         super_shift {
             bindings = <
-&trans        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_GUI  &trans  &trans  &trans  &trans  &trans            &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &trans  &trans  &kp LEFT_CONTROL  &trans    &trans  &trans  &trans  &trans  &trans
+&kp TAB        &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                                &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(N8)     &kp LS(N9)      &kp LS(N0)         &kp LS(EQUAL)
+&kp LS(TILDE)  &kp LS(Q)         &kp LS(W)         &kp LS(E)         &kp LS(R)         &kp LS(T)                                 &kp LS(Y)         &kp LS(U)   &kp LS(I)      &kp LS(O)       &kp LS(P)          &kp LS(MINUS)
+&kp LSHFT      &kp LS(A)         &kp LS(S)         &kp LS(D)         &kp LS(F)         &kp LS(G)                                 &kp LS(H)         &kp LS(J)   &kp LS(K)      &kp LS(L)       &kp LS(SEMICOLON)  &kp LS(SQT)
+&kp LEFT_GUI   &kp LS(Z)         &kp LS(X)         &kp LS(C)         &kp LS(V)         &kp LS(B)               &trans    &trans  &kp LS(N)         &kp LS(M)   &kp LS(COMMA)  &kp LS(PERIOD)  &kp LS(QMARK)      &kp LS(PIPE)
+                                 &trans            &trans            &trans            &mt LEFT_CONTROL ENTER  &trans    &trans  &trans            &trans      &trans         &trans
             >;
 
             label = "super_shift";
