@@ -16,6 +16,11 @@
 
 &lt { flavor = "hold-preferred"; };
 
+&sl {
+    bindings = <&mo>;
+    release-after-ms = <200>;
+};
+
 / {
     // Activate ADJUST layer by pressing raise and lower
 
@@ -141,6 +146,8 @@
 &kp LEFT_GUI  &trans  &trans  &trans        &trans  &trans                  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                       &trans  &kp LEFT_GUI  &trans  &mt LEFT_CONTROL ENTER  &trans    &trans  &trans  &trans  &trans  &trans
             >;
+
+            label = "swap_gui";
         };
 
         gaming_layer {
